@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>두근두근 소개팅 미션</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <p class="mini">TOUCH DATING MISSION GAME</p>
+        <h1>두근두근 소개팅 미션</h1>
+      </div>
+      <button id="resetBtn" class="reset-btn">처음부터</button>
+    </header>
+
+    <section class="scene">
+      <div class="scene-top">
+        <span id="stageText">현재 단계: 썸</span>
+        <span id="dayText">DAY 1</span>
+      </div>
+
+      <div class="characters">
+        <div class="character">
+          <div class="avatar">
+            <img src="assets/boy.png" alt="남자 주인공" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <span class="fallback">🧑</span>
+          </div>
+          <p>남자 주인공</p>
+        </div>
+
+        <div class="center-heart">
+          <div class="heart">💗</div>
+          <p id="relationText">아직은 어색한 사이</p>
+        </div>
+
+        <div class="character">
+          <div class="avatar">
+            <img src="assets/girl.png" alt="소개팅 상대" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+            <span class="fallback">👩</span>
+          </div>
+          <p>소개팅 상대</p>
+        </div>
+      </div>
+
+      <div id="speech" class="speech">
+        미션을 성공해서 호감도를 올려봐!
+      </div>
+    </section>
+
+    <section class="status-card">
+      <div class="love-row">
+        <span>호감도</span>
+        <strong id="loveValue">30</strong>
+      </div>
+      <div class="love-bar">
+        <div id="loveBar" class="love-fill"></div>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span>공부</span>
+          <strong id="studyValue">10</strong>
+        </div>
+        <div class="stat">
+          <span>운동</span>
+          <strong id="exerciseValue">10</strong>
+        </div>
+        <div class="stat">
+          <span>센스</span>
+          <strong id="senseValue">10</strong>
+        </div>
+        <div class="stat">
+          <span>진심</span>
+          <strong id="sincerityValue">10</strong>
+        </div>
+        <div class="stat">
+          <span>책임감</span>
+          <strong id="responsibilityValue">0</strong>
+        </div>
+        <div class="stat">
+          <span>가족 준비</span>
+          <strong id="familyValue">0/3</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission-card">
+      <p class="mini purple">MISSION</p>
+      <h2 id="missionTitle">오늘의 미션을 선택해!</h2>
+      <p id="missionDesc">
+        아래 버튼을 눌러 미션을 진행하자. 성공하면 호감도가 오르고, 실패하면 떨어진다.
+      </p>
+      <div id="missionBox" class="mission-box"></div>
+    </section>
+
+    <section class="action-grid">
+      <button class="action-btn" data-mission="study">📚<span>공부 미션</span></button>
+      <button class="action-btn" data-mission="exercise">💪<span>운동 미션</span></button>
+      <button class="action-btn" data-mission="message">💬<span>연락 미션</span></button>
+      <button class="action-btn" data-mission="date">🌙<span>데이트 미션</span></button>
+      <button class="action-btn" data-mission="gift">🎁<span>선물 미션</span></button>
+      <button class="action-btn" data-mission="crisis">⚠️<span>위기 미션</span></button>
+      <button class="action-btn" data-mission="timing">💘<span>타이밍 미션</span></button>
+      <button class="action-btn" data-mission="random">🎲<span>랜덤 사건</span></button>
+    </section>
+
+    <section class="special-grid">
+      <button id="confessBtn" class="special-btn">고백하기 💌</button>
+      <button id="relationshipBtn" class="special-btn">연애 미션 💑</button>
+      <button id="proposeBtn" class="special-btn">결혼 신청 💍</button>
+      <button id="familyBtn" class="special-btn">가족 준비 👶</button>
+    </section>
+
+    <section class="log-card">
+      <p class="mini">LOG</p>
+      <ul id="logList"></ul>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-card">
+      <h2 id="modalTitle">엔딩</h2>
+      <p id="modalText"></p>
+      <button id="restartBtn">다시 시작</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
